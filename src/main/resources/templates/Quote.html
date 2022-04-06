@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" style="font-size: 16px">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="page_type" content="np-template-header-footer-from-plugin" />
+		<title>Quote</title>
+		<link rel="stylesheet" href="css/nicepage.css" media="screen" />
+		<link rel="stylesheet" href="css/Quote.css" media="screen" />
+		<script class="u-script" type="text/javascript" src="js/jquery.js" defer=""></script>
+		<script class="u-script" type="text/javascript" src="js/nicepage.js" defer=""></script>
+		<meta name="generator" content="Nicepage 4.7.1, nicepage.com" />
+		<link
+			id="u-theme-google-font"
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
+		/>
+
+		<script type="application/ld+json">
+			{
+				"@context": "http://schema.org",
+				"@type": "Organization",
+				"name": "",
+				"logo": "images/logo.png"
+			}
+		</script>
+		<meta name="theme-color" content="#478ac9" />
+		<meta property="og:title" content="Quote" />
+		<meta property="og:type" content="website" />
+	</head>
+	<body class="u-body u-xl-mode">
+		<header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-2d76">
+			<div class="u-clearfix u-sheet u-sheet-1">
+				<a class="u-login u-login-1" onclick="changeURL('/login')">Login</a>
+				<a onclick="changeURL('')"
+					class="u-image u-logo u-image-1"
+					data-image-width="308"
+					data-image-height="149"
+				>
+					<img src="assets/logo.png" class="u-logo-image u-logo-image-1" />
+				</a>
+				<nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
+					<div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px">
+						<a
+							class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+							href="#"
+						>
+							<svg class="u-svg-link" viewBox="0 0 24 24">
+								<use
+									xmlns:xlink="http://www.w3.org/1999/xlink"
+									xlink:href="#menu-hamburger"
+								></use>
+							</svg>
+							<svg
+								class="u-svg-content"
+								version="1.1"
+								id="menu-hamburger"
+								viewBox="0 0 16 16"
+								x="0px"
+								y="0px"
+								xmlns:xlink="http://www.w3.org/1999/xlink"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<g>
+									<rect y="1" width="16" height="2"></rect>
+									<rect y="7" width="16" height="2"></rect>
+									<rect y="13" width="16" height="2"></rect>
+								</g>
+							</svg>
+						</a>
+					</div>
+					<div class="u-custom-menu u-nav-container">
+						<ul class="u-nav u-unstyled u-nav-1">
+							<li class="u-nav-item">
+								<a
+									class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+									onclick="changeURL('')"
+									style="padding: 10px 20px"
+									>Home</a
+								>
+							</li>
+							<li class="u-nav-item">
+								<a
+									class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+									onclick="changeURL('/quote')"
+									style="padding: 10px 20px"
+									>Quote</a
+								>
+							</li>
+							<li class="u-nav-item">
+								<a
+									class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+									onclick="changeURL(''+'#contact')"
+									style="padding: 10px 20px"
+									>Contact</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div class="u-custom-menu u-nav-container-collapse">
+						<div
+							class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav"
+						>
+							<div class="u-inner-container-layout u-sidenav-overflow">
+								<div class="u-menu-close"></div>
+								<ul
+									class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"
+								>
+									<li class="u-nav-item">
+										<a class="u-button-style u-nav-link" href="Home.html"
+											>Home</a
+										>
+									</li>
+									<li class="u-nav-item">
+										<a
+											class="u-button-style u-nav-link"
+											onclick="changeURL(''+'#contact')"
+											>Contact</a
+										>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<section class="u-clearfix u-section-1" id="sec-0b6d">
+			<div class="u-align-left u-clearfix u-sheet u-sheet-1">
+				<span
+					><h2 style="font-size: 2.25rem; font-weight: 700">
+						Get your free quote today!
+					</h2></span
+				>
+				<div class="u-expanded-width u-form u-form-1">
+					<select
+						name="formSelector"
+						class="formSelector u-form-select"
+						onchange="changeForm(this)"
+					>
+						<option value="autoHome">Auto and Home</option>
+						<option value="auto">Auto</option>
+						<option value="home">Home</option>
+					</select>
+					<br />
+					<span style="font-size: 1.5rem; font-weight: 700"
+						>Please fill out this form below to receive a quote.
+					</span>
+					<form
+						action="#"
+						th:action="@{/quote}"
+						th:object="${quoteForm}"
+						method="post"
+						id="form"
+						class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+						source="custom"
+						name="form"
+						style="padding: 10px"
+					>
+						<div class="u-form-group u-form-name u-form-partition-factor-3 u-label-top">
+							<label for="name-88ef" class="u-label">Name</label>
+							<input
+								type="text"
+								th:field="*{name}"
+								placeholder="Enter your Name"
+								id="name-88ef"
+								name="name"
+								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+								required=""
+							/>
+						</div>
+						<div
+							class="u-form-email u-form-group u-form-partition-factor-3 u-label-top"
+						>
+							<label for="email-88ef" class="u-label">Email</label>
+							<input
+								type="email"
+								th:field="*{email}"
+								placeholder="Enter a valid email address"
+								id="email-88ef"
+								name="email"
+								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+								required=""
+							/>
+						</div>
+						<div
+							class="u-form-group u-form-partition-factor-3 u-form-phone u-label-top u-form-group-3"
+						>
+							<label for="phone-51a4" class="u-label">Phone</label>
+							<input
+								type="tel"
+								th:field="*{phone}"
+								pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})"
+								placeholder="Enter your phone (e.g. +14155552675)"
+								id="phone-51a4"
+								name="phone"
+								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+								required=""
+							/>
+						</div>
+						<div class="u-form-address u-form-group u-label-top u-form-group-4">
+							<label for="address-7b12" class="u-label">Address</label>
+							<input
+								type="text"
+								th:field="*{address}"
+								placeholder="Enter your address"
+								id="address-7b12"
+								name="address"
+								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+								required=""
+							/>
+						</div>
+						<div
+							class="u-form-group u-form-partition-factor-2 u-form-select u-label-top u-form-group-5 home"
+						>
+							<label for="select-cf5b" class="u-label">Heating Type:</label>
+							<div class="u-form-select-wrapper">
+								<select
+									th:field="*{heatType}"
+									id="select-cf5b"
+									name="heat-type"
+									class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+								>
+									<option value="Oil">Oil</option>
+									<option value="Wood">Wood</option>
+									<option value="Other">Other</option>
+								</select>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="14"
+									height="12"
+									version="1"
+									class="u-caret"
+								>
+									<path fill="currentColor" d="M4 8L0 4h8z"></path>
+								</svg>
+							</div>
+						</div>
+						<div
+							class="u-form-group u-form-partition-factor-2 u-label-top u-form-group-6 home"
+						>
+							<label for="text-bd2a" class="u-label">Year</label>
+							<input
+								type="text"
+								th:field="*{year}"
+								placeholder=""
+								id="text-bd2a"
+								name="home-year"
+								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+							/>
+						</div>
+						<div
+							class="u-form-group u-form-partition-factor-2 u-label-top u-form-group-7 home"
+						>
+							<label for="text-9b96" class="u-label">Value</label>
+							<input
+								type="text"
+								th:field="*{value}"
+								placeholder="$"
+								id="text-9b96"
+								name="home-value"
+								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+								maxlength="10"
+							/>
+						</div>
+						<div
+							class="u-form-group u-form-partition-factor-2 u-form-select u-label-top u-form-group-8 home"
+						>
+							<label for="select-612c" class="u-label">Area Type</label>
+							<div class="u-form-select-wrapper">
+								<select
+									th:field="*{areaType}"
+									id="select-612c"
+									name="Area-type"
+									class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+								>
+									<option value="Urban">Urban</option>
+									<option value="Rural">Rural</option>
+								</select>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="14"
+									height="12"
+									version="1"
+									class="u-caret"
+								>
+									<path fill="currentColor" d="M4 8L0 4h8z"></path>
+								</svg>
+							</div>
+						</div>
+						<div
+							class="u-form-group u-form-partition-factor-3 u-label-top u-form-group-9 auto"
+						>
+							<label for="text-12df" class="u-label">Driver Date of Birth:</label>
+							<input
+								type="text"
+								th:field="*{dob}"
+								placeholder="MM/DD/YYYY"
+								id="text-12df"
+								name="driver-dob"
+								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+								maxlength="10"
+							/>
+						</div>
+						<div
+							class="u-form-group u-form-partition-factor-3 u-label-top u-form-group-10 auto"
+						>
+							<label for="text-05b6" class="u-label">Vehicle Year</label>
+							<input
+								type="text"
+								th:field="*{vehicleYear}"
+								id="text-05b6"
+								name="vehicle-year"
+								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+								maxlength="4"
+							/>
+						</div>
+						<div
+							class="u-form-group u-form-partition-factor-3 u-label-top u-form-group-11 auto"
+						>
+							<label for="text-77b4" class="u-label">Number of Accidents</label>
+							<input
+								type="text"
+								th:field="*{numAccidents}"
+								id="text-77b4"
+								name="number-accidents"
+								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+								maxlength="2"
+							/>
+						</div>
+						<div
+							class="u-form-group u-form-partition-factor-2 u-form-select u-label-top u-form-group-12 auto"
+						>
+							<label class="u-label">Make</label>
+							<div class="u-form-select-wrapper">
+								<select
+									th:field="*{make}"
+									id="make"
+									name="vehicle-make"
+									class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+									onchange="configurevehicle(this,document.getElementById('model'))"
+								>
+									<option value="" selected disabled>Please select Vehicle Make</option>
+									<option value="Ford">Ford</option>
+									<option value="Honda">Honda</option>
+									<option value="Nissan">Nissan</option>
+									<option value="Dodge">Dodge</option>
+								</select>
+								<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="14"
+										height="12"
+										version="1"
+										class="u-caret"
+								>
+									<path fill="currentColor" d="M4 8L0 4h8z"></path>
+							</div>
+						</div>
+						<div
+							class="u-form-group u-form-partition-factor-2 u-form-select u-label-top u-form-group-13 auto"
+						>
+							<label class="u-label">Model</label>
+							<div class="u-form-select-wrapper">
+								<select
+									th:field="*{model}"
+									id="model"
+									name="vehicle-model"
+									class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+								>
+									<option value="" selected disabled>
+										Please select Vehicle Model
+									</option>
+									<option value="F150">F150</option>
+									<option value="Bronco">Bronco</option>
+									<option value="Focus">Focus</option>
+								</select>
+								<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="14"
+										height="12"
+										version="1"
+										class="u-caret"
+								>
+									<path fill="currentColor" d="M4 8L0 4h8z"></path>
+							</div>
+						</div>
+						<div class="u-align-center u-form-group u-form-submit u-label-top">
+							<button type="submit">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+	</body>
+	<script>
+		function changeForm(select) {
+			let autoList = document.getElementById("form").querySelectorAll(".auto");
+			let homeList = document.getElementById("form").querySelectorAll(".home");
+			if (select.value == "autoHome") {
+				for (let i = 0; i < autoList.length; i++) {
+					if (autoList[i].classList.contains("hide")) {
+						autoList[i].classList.remove("hide");
+					}
+				}
+				for (let i = 0; i < homeList.length; i++) {
+					if (homeList[i].classList.contains("hide")) {
+						homeList[i].classList.remove("hide");
+					}
+				}
+			} else if (select.value == "auto") {
+				for (let i = 0; i < autoList.length; i++) {
+					if (autoList[i].classList.contains("hide")) {
+						autoList[i].classList.remove("hide");
+					}
+				}
+				for (let i = 0; i < homeList.length; i++) {
+					if (!homeList[i].classList.contains("hide")) {
+						homeList[i].classList.add("hide");
+					}
+				}
+			} else if (select.value == "home") {
+				for (let i = 0; i < autoList.length; i++) {
+					if (!autoList[i].classList.contains("hide")) {
+						autoList[i].classList.add("hide");
+					}
+				}
+				for (let i = 0; i < homeList.length; i++) {
+					if (homeList[i].classList.contains("hide")) {
+						homeList[i].classList.remove("hide");
+					}
+				}
+			}
+		}
+	</script>
+	<script src="js/changeURL.js"></script>
+	<script src="js/vehicleselect.js"></script>
+</html>
