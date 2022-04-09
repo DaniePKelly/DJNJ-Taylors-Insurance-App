@@ -1,18 +1,24 @@
 package com.example.taylor_insurance;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Locale;
+import java.util.Optional;
 
 
 @Controller
 public class WebController {
 
-    private String email = "admin@email.com";
-    private String password = "12345";
+//    private String email = "admin@email.com";
+//    private String password = "12345";
+
+    @Autowired  //wires the customerRepository
+    private CustomerRepository customerRepository;
 
     //getting quote page
     @GetMapping("/quote")
@@ -41,20 +47,21 @@ public class WebController {
     public String getLogin(@ModelAttribute LoginManager loginManager) {
         System.out.println(loginManager);
         //if email and password match then log in to dashboard
-        if (loginManager.getEmail().equals(email) && loginManager.getPassword().equals(password)) {
+        Optional<Customer> customer = customerRepository.findById(Integer.parseInt(loginManager.getPassword()));
+        System.out.println(customer.get().getEmail()+ " "+ customer.get().getId());
+        if (loginManager.getEmail().toLowerCase(Locale.ROOT).equals(customer.get().getEmail().toLowerCase(Locale.ROOT)) && loginManager.getPassword().equals(customer.get().getId().toString())) {
             return "redirect:/Dashboard";
         } else {
             //TODO: show error
+            System.out.println("Login Failed");
             return "login";
         }
     }
 
     //gets dashboard
     @GetMapping("/Dashboard")
-    public String getDashboard() {
-        return "Dashboard";
+    public  String getDashboard() {
+        return "dashboard";
     }
-
-
 
 }

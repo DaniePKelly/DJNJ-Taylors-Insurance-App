@@ -7,7 +7,6 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "/v1")   //versioning the API
 public class MainController {
 
 
@@ -15,7 +14,6 @@ public class MainController {
     PolicyManager policyManager = new PolicyManager();
 
     //TODO use this or not?
-    public static final String VERSION_1 = "/v1";
     public static final String CUSTOMER = "/customers";
     public static final String HOME = "/homes";
     public static final String AUTO = "/autos";
@@ -39,10 +37,10 @@ public class MainController {
     @Autowired
     private AutoPolicyRepository autoPolicyRepository;
 
-    @GetMapping(CUSTOMER + "/{id}")
+    @GetMapping(CUSTOMER +"/byid")
     public @ResponseBody
-    Optional<Customer> getCustomerWithId(@PathVariable Integer id){
-        return customerRepository.findById(id);
+    Optional<Customer> getCustomerWithId(@RequestParam Integer customerId){
+        return customerRepository.findById(customerId);
     }
 
     @GetMapping(path = CUSTOMER)
@@ -54,7 +52,7 @@ public class MainController {
     //TODO add @ApiResponse paramenters
 
     //TODO Use buttons that go to path?
-    @PostMapping(path = CUSTOMER)
+    @PostMapping(path = CUSTOMER +"/byid")
     public @ResponseBody
     String addNewCustomer(@RequestParam String firstName, @RequestParam String lastName, @RequestParam String email, @RequestParam LocalDate dateOfBirth){
         //TODO Add Builder patter?
@@ -67,10 +65,10 @@ public class MainController {
         return "Saved";
     }
 
-    @GetMapping(CUSTOMER + "/{id}" + HOME)
+    @GetMapping(CUSTOMER +"/byid"+ HOME)
     public @ResponseBody
-    Iterable<Home> getHomesByCustomerWithId(@PathVariable Integer id){
-        return customerRepository.findById(id).get().getHomes();
+    Iterable<Home> getHomesByCustomerWithId(@RequestParam int customerId){
+        return customerRepository.findById(customerId).get().getHomes();
     }
 
     @GetMapping(path = CUSTOMER + HOME)
@@ -79,9 +77,9 @@ public class MainController {
         return homeRepository.findAll();
     }
 
-    @PostMapping(path = CUSTOMER + "/{id}" + HOME)
+    @PostMapping(path = CUSTOMER + HOME)
     public @ResponseBody
-    String addNewHome(@PathVariable Integer id,
+    String addNewHome(@RequestParam Integer customerId,
                       @RequestParam String description, @RequestParam int value, @RequestParam LocalDate dateBuilt){
         Home home = new Home();
         home.setDescription(description);
@@ -91,7 +89,7 @@ public class MainController {
         home.setHeatingType(Home.HeatingType.OIL_HEATING);
         home.setLocation(Home.Location.RURAL);
 
-        Optional<Customer> customer = customerRepository.findById(id);
+        Optional<Customer> customer = customerRepository.findById(customerId);
 
         if(customer.isPresent()){
             home.setCustomer(customer.get());
@@ -106,10 +104,10 @@ public class MainController {
         }
     }
 
-    @GetMapping(CUSTOMER + "/{id}" + AUTO)
+    @GetMapping(CUSTOMER +"/byId"+ AUTO)
     public @ResponseBody
-    Iterable<Auto> getAutoByCustomerWithId(@PathVariable Integer id){
-        return customerRepository.findById(id).get().getAutos();
+    Iterable<Auto> getAutoByCustomerWithId(@RequestParam int customerId){
+        return customerRepository.findById(customerId).get().getAutos();
     }
 
     @GetMapping(path = CUSTOMER + AUTO)
@@ -118,18 +116,19 @@ public class MainController {
         return autoRepository.findAll();
     }
 
-    @PostMapping(path = CUSTOMER + "/{id}" + AUTO)
+    @PostMapping(path = CUSTOMER + AUTO)
     public @ResponseBody
-    String addNewAuto(@PathVariable Integer id,
-                      @RequestParam String model, @RequestParam int autoYear, @RequestParam String make,
-                      @RequestParam int numberOfAccidents ){
+    String addNewAuto(@RequestParam String model, @RequestParam int autoYear, @RequestParam String make,
+                      @RequestParam int numberOfAccidents,@RequestParam Integer customerId ){
 
         Auto auto = new Auto();
         auto.setModel(model);
         auto.setAutoYear(autoYear);
         auto.setMake(make);
         auto.setNumberOfAccidents(numberOfAccidents);
-        Optional<Customer> customer = customerRepository.findById(id);
+
+
+        Optional<Customer> customer = customerRepository.findById(customerId);
 
         if(customer.isPresent()){
             auto.setCustomer(customer.get());
@@ -145,10 +144,10 @@ public class MainController {
 
     }
 
-    @GetMapping(CUSTOMER + "/{id}" + AUTOQUOTE)
+    @GetMapping(CUSTOMER +"/byId"+ AUTOQUOTE)
     public @ResponseBody
-    Iterable<AutoQuote> getAutoQuoteByCustomerWithId(@PathVariable Integer id){
-        return customerRepository.findById(id).get().getAutoQuotes();
+    Iterable<AutoQuote> getAutoQuoteByCustomerWithId(@PathVariable Integer customerId){
+        return customerRepository.findById(customerId).get().getAutoQuotes();
     }
 
     @GetMapping(path = CUSTOMER + AUTOQUOTE)
@@ -157,12 +156,12 @@ public class MainController {
         return autoQuoteRepository.findAll();
     }
 
-    @PostMapping(path = CUSTOMER + "/{id}" + AUTOQUOTE)
+    @PostMapping(path = CUSTOMER + AUTOQUOTE)
     public @ResponseBody
-    String addNewAutoQuote(@PathVariable Integer id, @RequestParam int autoId){
+    String addNewAutoQuote(@RequestParam int customerId, @RequestParam int autoId){
         AutoQuote autoQuote =new AutoQuote();
         Auto autoForQuote = new Auto();
-        Optional<Customer> customer = customerRepository.findById(id);
+        Optional<Customer> customer = customerRepository.findById(customerId);
         for (Auto auto:customer.get().getAutos()) {
             if(auto.getAutoId() == autoId){
                 autoForQuote = auto;
@@ -190,10 +189,10 @@ public class MainController {
         }
     }
 
-    @GetMapping(CUSTOMER + "/{id}" + HOMEQUOTE)
+    @GetMapping(CUSTOMER +"/byid"+ HOMEQUOTE)
     public @ResponseBody
-    Iterable<HomeQuote> getHomeQuoteByCustomerWithId(@PathVariable Integer id){
-        return customerRepository.findById(id).get().getHomeQuotes();
+    Iterable<HomeQuote> getHomeQuoteByCustomerWithId(@RequestParam int customerId){
+        return customerRepository.findById(customerId).get().getHomeQuotes();
     }
 
     @GetMapping(path = CUSTOMER + HOMEQUOTE)
@@ -202,9 +201,9 @@ public class MainController {
         return homeQuoteRepository.findAll();
     }
 
-    @PostMapping(path = CUSTOMER + "/{id}" + HOMEQUOTE)
+    @PostMapping(path = CUSTOMER + HOMEQUOTE)
     public @ResponseBody
-    String addNewHomeQuote(@PathVariable Integer id , @RequestParam int homeId){
+    String addNewHomeQuote(@RequestParam int customerId , @RequestParam int homeId){
 
         //TODO Run to get premium and auto quote
         HomeQuote homeQuote = new HomeQuote();
@@ -212,7 +211,7 @@ public class MainController {
 
 
 
-        Optional<Customer> customer = customerRepository.findById(id);
+        Optional<Customer> customer = customerRepository.findById(customerId);
 
         for (Home home:customer.get().getHomes()) {
             if(home.getHomeId() == homeId){
@@ -238,10 +237,10 @@ public class MainController {
     }
 
 
-    @GetMapping(CUSTOMER + "/{id}" + AUTOPOLICY)
+    @GetMapping(CUSTOMER +"/byid"+ AUTOPOLICY)
     public @ResponseBody
-    Iterable<AutoPolicy> getAutoPolicyByCustomerWithId(@PathVariable Integer id){
-        return customerRepository.findById(id).get().getAutoPolicies();
+    Iterable<AutoPolicy> getAutoPolicyByCustomerWithId(@RequestParam int customerId){
+        return customerRepository.findById(customerId).get().getAutoPolicies();
     }
 
     @GetMapping(path = CUSTOMER + AUTOPOLICY)
@@ -250,14 +249,14 @@ public class MainController {
         return autoPolicyRepository.findAll();
     }
 
-    @PostMapping(path = CUSTOMER + "/{id}" + AUTOPOLICY)
+    @PostMapping(path = CUSTOMER + AUTOPOLICY)
     public @ResponseBody
-    String addNewAutoPolicy(@PathVariable Integer id , @RequestParam int autoQuoteID){
+    String addNewAutoPolicy(@RequestParam int customerId , @RequestParam int autoQuoteID){
 
         //TODO Run to get premium and auto quote
 
 
-        Optional<Customer> customer = customerRepository.findById(id);
+        Optional<Customer> customer = customerRepository.findById(customerId);
 
 //        for (Home home:customer.get().getHomes()) {
 //            if(home.getHomeId() == homeId){
@@ -283,7 +282,7 @@ public class MainController {
     }
 
 
-    @GetMapping(CUSTOMER + "/{id}" + HOMEPOLICY)
+    @GetMapping(CUSTOMER +"/byid" + HOMEPOLICY)
     public @ResponseBody
     Iterable<HomePolicy> getHomePolicyByCustomerWithId(@PathVariable Integer id){
         return customerRepository.findById(id).get().getHomePolicies();
@@ -295,14 +294,14 @@ public class MainController {
         return homePolicyRepository.findAll();
     }
 
-    @PostMapping(path = CUSTOMER + "/{id}" + HOMEPOLICY)
+    @PostMapping(path = CUSTOMER + HOMEPOLICY)
     public @ResponseBody
-    String addNewHomePolicy(@PathVariable Integer id , @RequestParam int homeQuoteID){
+    String addNewHomePolicy(@RequestParam int customerId , @RequestParam int homeQuoteID){
 
         //TODO Run to get premium and auto quote
 
 
-        Optional<Customer> customer = customerRepository.findById(id);
+        Optional<Customer> customer = customerRepository.findById(customerId);
 
         HomePolicy homePolicy = new HomePolicy();
         HomeQuote homeQuoteForPolicy = new HomeQuote();

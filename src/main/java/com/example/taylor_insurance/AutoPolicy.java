@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity(name = "autopolicy")
-public class AutoPolicy extends Policy{
+public class AutoPolicy{
 
     @Id
     @GeneratedValue
@@ -110,10 +110,5 @@ public class AutoPolicy extends Policy{
 
     public void setAutoQuote(AutoQuote autoQuote) {
         this.autoQuote = autoQuote;
-    }
-
-    @Override
-    public double premium() {
-        return 0;
     }
 }

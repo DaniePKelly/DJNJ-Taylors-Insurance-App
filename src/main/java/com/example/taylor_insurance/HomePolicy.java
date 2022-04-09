@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity(name = "homepolicy")
-public class HomePolicy extends Policy{
+public class HomePolicy{
 
     @Id
     @GeneratedValue
@@ -92,10 +92,5 @@ public class HomePolicy extends Policy{
 
     public void setHomeQuote(HomeQuote homeQuote) {
         this.homeQuote = homeQuote;
-    }
-
-    @Override
-    public double premium() {
-        return 0;
     }
 }
