@@ -150,9 +150,9 @@
 						>Please fill out this form below to receive a quote.
 					</span>
 					<form
-						action="customers"
+						action="#"
 						th:action="@{/quote}"
-						th:object="${quoteForm}"
+						th:object="${quoteManager}"
 						method="post"
 						id="form"
 						class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
@@ -161,12 +161,12 @@
 						style="padding: 10px"
 					>
 						<div class="u-form-group u-form-name u-form-partition-factor-3 u-label-top">
-							<label for="name" class="u-label">Name</label>
+							<label for="name-88ef" class="u-label">Name</label>
 							<input
 								type="text"
 								th:field="*{name}"
 								placeholder="Enter your Name"
-								id="name"
+								id="name-88ef"
 								name="name"
 								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
 								required=""
@@ -175,12 +175,12 @@
 						<div
 							class="u-form-email u-form-group u-form-partition-factor-3 u-label-top"
 						>
-							<label for="email" class="u-label">Email</label>
+							<label for="email-88ef" class="u-label">Email</label>
 							<input
 								type="email"
 								th:field="*{email}"
 								placeholder="Enter a valid email address"
-								id="email"
+								id="email-88ef"
 								name="email"
 								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
 								required=""
@@ -202,12 +202,12 @@
 							/>
 						</div>
 						<div class="u-form-address u-form-group u-label-top u-form-group-4">
-							<label for="address" class="u-label">Address</label>
+							<label for="address-7b12" class="u-label">Address</label>
 							<input
 								type="text"
 								th:field="*{address}"
 								placeholder="Enter your address"
-								id="address"
+								id="address-7b12"
 								name="address"
 								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
 								required=""
@@ -294,12 +294,12 @@
 						<div
 							class="u-form-group u-form-partition-factor-3 u-label-top u-form-group-9 auto"
 						>
-							<label for="dob" class="u-label">Driver Date of Birth:</label>
+							<label for="text-12df" class="u-label">Driver Date of Birth:</label>
 							<input
 								type="text"
 								th:field="*{dob}"
 								placeholder="MM/DD/YYYY"
-								id="dob"
+								id="text-12df"
 								name="driver-dob"
 								class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
 								maxlength="10"

@@ -14,7 +14,6 @@ public class PolicyManager {
         autoPolicy.setAutoQuote(autoQuote);
         autoPolicy.setAutoModel(autoQuote.getAutoModel());
         autoPolicy.setAutoYear(autoQuote.getAutoYear());
-
         return autoPolicy;
     }
 
@@ -26,7 +25,6 @@ public class PolicyManager {
         homePolicy.setPremium(homeQuote.getPremium());
         homePolicy.setHome(homeQuote.getHome());
         homePolicy.setHomeQuote(homeQuote);
-
         return homePolicy;
     }
 

@@ -7,12 +7,12 @@
 	<meta name="description" content="" />
 	<meta name="page_type" content="np-template-header-footer-from-plugin" />
 	<title>Login</title>
-	<link rel="stylesheet" href="css/nicepage.css" media="screen" />
-	<link rel="stylesheet" href="css/Login.css" media="screen" />
-	<link rel="stylesheet" href="css/create-account.css" />
-	<script type="text/javascript" src="js/jquery.js" ></script>
-	<script type="text/javascript" src="js/nicepage.js" ></script>
-	<script type="text/javascript" src="js/create-account.js"></script>
+	<link rel="stylesheet" href="/css/nicepage.css" media="screen" />
+	<link rel="stylesheet" href="/css/Login.css" media="screen" />
+	<link rel="stylesheet" href="/css/create-account.css" />
+	<script type="text/javascript" src="/js/jquery.js" ></script>
+	<script type="text/javascript" src="/js/nicepage.js" ></script>
+	<script type="text/javascript" src="/js/create-account.js"></script>
 	<meta name="generator" content="Nicepage 4.7.1, nicepage.com" />
 	<link
 			id="u-theme-google-font"
@@ -33,6 +33,7 @@
 	<meta property="og:type" content="website" />
 </head>
 <body class="u-body u-xl-mode">
+<div onclick="toggleAccountCreation()" class="cover hide"></div>
 <header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-2d76">
 	<div class="u-clearfix u-sheet u-sheet-1">
 		<a class="u-login u-login-1" onclick="changeURL('/login')">Login</a>
@@ -176,12 +177,12 @@
 				</div>
 				<div class="u-align-left u-form-group u-form-submit">
 
-					<button type="submit">Login</button>
+					<button id="loginBtn" type="submit" >Login</button>
+					<button type="button" onclick="toggleAccountCreation()">Create Account</button>
 				</div>
 				<input type="hidden" value="" name="recaptchaResponse" />
 			</form>
-			<h2>Create Account</h2>
-			<form action="">
+			<form action="" class="create-account-form hide">
 				<div class="create-account">
 					<label><b>First Name</b></label>
 					<input type="text" name="firstName" id="fname" required>
@@ -247,4 +248,19 @@
 </footer>
 </body>
 <script src="js/changeURL.js"></script>
+<script>
+	function toggleAccountCreation() {
+		document.querySelector(".cover").classList.toggle("hide");
+		document.querySelector(".create-account-form").classList.toggle("hide");
+	}
+
+
+	function sessionStorePass(){
+		var psw = document.getElementById('password-a30d').value;
+		console.log(psw);
+		sessionStorage.setItem('id',psw);
+	}
+
+
+</script>
 </html>

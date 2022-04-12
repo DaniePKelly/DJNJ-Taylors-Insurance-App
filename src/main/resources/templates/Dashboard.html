@@ -1,358 +1,763 @@
 <!DOCTYPE html>
 <html style="font-size: 16px">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta charset="utf-8" />
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
-	<meta name="page_type" content="np-template-header-footer-from-plugin" />
-	<title>Dashboard</title>
-	<link rel="stylesheet" href="css/nicepage.css" media="screen" />
-	<link rel="stylesheet" href="css/Dashboard.css" media="screen" />
-	<script class="u-script" type="text/javascript" src="js/jquery.js" defer=""></script>
-	<script class="u-script" type="text/javascript" src="js/nicepage.js" defer=""></script>
-	<meta name="generator" content="Nicepage 4.7.1, nicepage.com" />
-	<link
-			id="u-theme-google-font"
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
-	/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="page_type" content="np-template-header-footer-from-plugin"/>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/nicepage.css" media="screen"/>
+    <link rel="stylesheet" href="css/Dashboard.css" media="screen"/>
+    <script class="u-script" type="text/javascript" src="js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="js/nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 4.7.1, nicepage.com"/>
+    <link
+            id="u-theme-google-font"
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
+    />
 
-	<script type="application/ld+json">
-		{
-			"@context": "http://schema.org",
-			"@type": "Organization",
-			"name": "",
-			"logo": "images/logo.png"
-		}
-	</script>
-	<meta name="theme-color" content="#478ac9" />
-	<meta property="og:title" content="Dashboard" />
-	<meta property="og:type" content="website" />
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "",
+            "logo": "images/logo.png"
+        }
+    </script>
+    <meta name="theme-color" content="#478ac9"/>
+    <meta property="og:title" content="Dashboard"/>
+    <meta property="og:type" content="website"/>
 </head>
 <body class="u-body u-xl-mode">
+<div onclick="toggleAdd(this)" class="cover hide"></div>
 <header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-2d76">
-	<div class="u-clearfix u-sheet u-sheet-1">
-		<a class="u-login u-login-1" onclick="changeURL('/login')">Log out</a>
-		<a
-				onclick="changeURL('')"
-				class="u-image u-logo u-image-1"
-				data-image-width="308"
-				data-image-height="149"
-		>
-			<img src="assets/logo.png" class="u-logo-image u-logo-image-1" />
-		</a>
-		<nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
-			<div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px">
-				<a
-						class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-						href="#"
-				>
-					<svg class="u-svg-link" viewBox="0 0 24 24">
-						<use
-								xmlns:xlink="http://www.w3.org/1999/xlink"
-								xlink:href="#menu-hamburger"
-						></use>
-					</svg>
-					<svg
-							class="u-svg-content"
-							version="1.1"
-							id="menu-hamburger"
-							viewBox="0 0 16 16"
-							x="0px"
-							y="0px"
-							xmlns:xlink="http://www.w3.org/1999/xlink"
-							xmlns="http://www.w3.org/2000/svg"
-					>
-						<g>
-							<rect y="1" width="16" height="2"></rect>
-							<rect y="7" width="16" height="2"></rect>
-							<rect y="13" width="16" height="2"></rect>
-						</g>
-					</svg>
-				</a>
-			</div>
-			<div class="u-custom-menu u-nav-container">
-				<ul class="u-nav u-unstyled u-nav-1">
-					<li class="u-nav-item">
-						<a
-								class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-								onclick="changeURL('')"
-								style="padding: 10px 20px"
-						>Home</a
-						>
-					</li>
-					<li class="u-nav-item">
-						<a
-								class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-								onclick="changeURL('/quote')"
-								style="padding: 10px 20px"
-						>Quote</a
-						>
-					</li>
-					<li class="u-nav-item">
-						<a
-								class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-								onclick="changeURL(''+'#contact')"
-								style="padding: 10px 20px"
-						>Contact</a
-						>
-					</li>
-				</ul>
-			</div>
-			<div class="u-custom-menu u-nav-container-collapse">
-				<div
-						class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav"
-				>
-					<div class="u-inner-container-layout u-sidenav-overflow">
-						<div class="u-menu-close"></div>
-						<ul
-								class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"
-						>
-							<li class="u-nav-item">
-								<a class="u-button-style u-nav-link" href="Home.html"
-								>Home</a
-								>
-							</li>
-							<li class="u-nav-item">
-								<a class="u-button-style u-nav-link" onclick="changeURL('/quote')"
-								>Quote</a
-								>
-							</li>
-							<li class="u-nav-item">
-								<a
-										class="u-button-style u-nav-link"
-										onclick="changeURL(''+'#contact')"
-								>Contact</a
-								>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-			</div>
-		</nav>
-	</div>
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <a class="u-login u-login-1" onclick="changeURL('/login')">Log out</a>
+        <a
+                onclick="changeURL('')"
+                class="u-image u-logo u-image-1"
+                data-image-width="308"
+                data-image-height="149"
+        >
+            <img src="assets/logo.png" class="u-logo-image u-logo-image-1"/>
+        </a>
+        <nav class="u-align-center u-menu u-menu-dropdown u-offcanvas u-menu-1">
+            <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px">
+                <a
+                        class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                        href="#"
+                >
+                    <svg class="u-svg-link" viewBox="0 0 24 24">
+                        <use
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                xlink:href="#menu-hamburger"
+                        ></use>
+                    </svg>
+                    <svg
+                            class="u-svg-content"
+                            version="1.1"
+                            id="menu-hamburger"
+                            viewBox="0 0 16 16"
+                            x="0px"
+                            y="0px"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g>
+                            <rect y="1" width="16" height="2"></rect>
+                            <rect y="7" width="16" height="2"></rect>
+                            <rect y="13" width="16" height="2"></rect>
+                        </g>
+                    </svg>
+                </a>
+            </div>
+            <div class="u-custom-menu u-nav-container">
+                <ul class="u-nav u-unstyled u-nav-1">
+                    <li class="u-nav-item">
+                        <a
+                                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                                onclick="changeURL('')"
+                                style="padding: 10px 20px"
+                        >Home</a
+                        >
+                    </li>
+                    <li class="u-nav-item">
+                        <a
+                                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                                onclick="changeURL('/quote')"
+                                style="padding: 10px 20px"
+                        >Quote</a
+                        >
+                    </li>
+                    <li class="u-nav-item">
+                        <a
+                                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                                onclick="changeURL(''+'#contact')"
+                                style="padding: 10px 20px"
+                        >Contact</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div class="u-custom-menu u-nav-container-collapse">
+                <div
+                        class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav"
+                >
+                    <div class="u-inner-container-layout u-sidenav-overflow">
+                        <div class="u-menu-close"></div>
+                        <ul
+                                class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"
+                        >
+                            <li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="Home.html"
+                                >Home</a
+                                >
+                            </li>
+                            <li class="u-nav-item">
+                                <a
+                                        class="u-button-style u-nav-link"
+                                        onclick="changeURL('/quote')"
+                                >Quote</a
+                                >
+                            </li>
+                            <li class="u-nav-item">
+                                <a
+                                        class="u-button-style u-nav-link"
+                                        onclick="changeURL(''+'#contact')"
+                                >Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+            </div>
+        </nav>
+    </div>
 </header>
 <section class="u-clearfix u-section-1" id="sec-b288">
-	<div class="u-clearfix u-sheet u-sheet-1">
-		<div class="u-expanded-width u-list u-list-1">
-			<div class="u-repeater u-repeater-1">
-				<div
-						class="u-align-left u-container-style u-custom-color-2 u-custom-item u-list-item u-repeater-item u-list-item-1 dashboard-block"
-				>
-					<div
-							class="u-container-layout u-similar-container u-container-layout-1"
-					>
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-expanded-width u-list u-list-1">
+            <div class="u-repeater u-repeater-1">
+                <div
+                        class="u-align-left u-container-style u-custom-color-2 u-custom-item u-list-item u-repeater-item u-list-item-1 dashboard-block"
+                >
+                    <div
+                            class="u-container-layout u-similar-container u-container-layout-1"
+                    >
 								<span class="u-file-icon u-icon u-icon-1"
-								><img src="assets/686317.png" alt=""
-								/></span>
-						<h3 class="u-text u-text-default u-text-1">Customer Info</h3>
-						<p><strong> Name:</strong> John Smith</p>
-						<p><strong> Email:</strong> admin@email.com</p>
+                                ><img src="assets/686317.png" alt=""
+                                /></span>
+                        <h3 class="u-text u-text-default u-text-1">Customer Info</h3>
+                        <p><strong> Account Number:<span id="accountNum"></span></strong></p>
+                        <p><strong>First Name:<span id="firstName"></span></strong></p>
+                        <p><strong>Last Name Name:<span id="lastName"></span></strong></p>
+                        <p><strong> Email:<span id="email"></span></strong></p>
+                        <p><strong> Date of Birth:<span id="dob"></span></strong></p>
+                        <button onclick="toggleAdd(this)" class="add-auto-button dashboard-button">
+                            Add Auto
+                        </button>
+                        <button onclick="toggleAdd(this)" class="add-home-button dashboard-button">
+                            Add Home
+                        </button>
 
-						<form action="/customers/autos" method="post" style="border: 2px solid black;">
-							<h2>Add Auto</h2>
-							<div class="add-auto">
-								<label for="customerId"><b>Account Number</b></label>
-								<input type="int" name="customerId" id="customerId" required>
-								<br/>
-								<label for="make"><b>Vehicle Make</b></label>
-								<div class="u-form-select-wrapper">
-									<select id="make" name="make" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" onchange="configurevehicle(this,document.getElementById('model'))">
-										<option value="" selected disabled>Please select Vehicle Make</option>
-										<option value="Ford">Ford</option>
-										<option value="Honda">Honda</option>
-										<option value="Nissan">Nissan</option>
-										<option value="Dodge">Dodge</option>
-									</select>
-								</div>
-								<br/>
-								<label for="model"><b>Vehicle Model</b></label>
-								<div class="u-form-select-wrapper">
-									<select id="model" name="model" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-										<option value="" selected disabled>Please select Vehicle Model</option>
-										<option value="F150">F150</option>
-										<option value="Bronco">Bronco</option>
-										<option value="Focus">Focus</option>
-									</select>
-								</div>
-								<br/>
-								<label for="autoYear"><b>Vehicle Year</b></label>
-								<input type="int" name="autoYear" id="autoYear" required>
-								<br/>
-								<label for="numberOfAccidents"><b>Number of Accidents</b></label>
-								<input type="number" name="numberOfAccidents" id="numberOfAccidents" required>
-								<br/>
-								<button type="submit" class="create-acc-button">Add Vehcile</button>
-							</div>
-						</form>
-						<form action="" style="border: 2px solid black;">
-							<h2>Add Home</h2>
-							<div class="add-home">
-								<label for="customerId"><b>Account Number</b></label>
-								<input type="int" name="customerId" id="customerId" required>
-								<br/>
-								<label for="value"><b>Home Value</b></label>
-								<input type="int" name="value" id="value" required>
-								<br/>
-								<label for="heatingType"><b>Heat Type</b></label>
-								<select id="heatingType"name="heatingType">
-									<option value="OIL_HEATING">Oil</option>
-									<option value="WOOD_HEATING">Wood</option>
-									<option value="OTHER_HEATING">Other</option>
-								</select>
-								<br/>
-								<label for="location"><b>Home Area</b></label>
-								<select id="location"name="location">
-									<option value="URBAN">Urban</option>
-									<option value="RURAL">Rural</option>
-								</select>
-								<br/>
-								<label for="dateBuilt"><b>Date of Build</b></label>
-								<input type="date" name="dateBuilt" id="dateBuilt" required>
-								<br/>
-								<button type="submit" class="create-home-button">Add Home</button>
-							</div>
-						</form>
-					</div>
-				</div>
-				<div
-						class="u-align-left u-container-style u-custom-color-2 u-custom-item u-list-item u-repeater-item u-list-item-2 dashboard-block"
-				>
-					<div
-							class="u-container-layout u-similar-container u-container-layout-2"
-					>
+
+                        <form
+                                action="/customers/autos"
+                                method="post"
+                                style="border: 2px solid black"
+                                class="add-auto hide"
+                        >
+                            <div>
+                                <label for="customerId"></label>
+                                <input
+                                        hidden
+                                        type="int"
+                                        name="customerId"
+                                        id="customerAutoId"
+                                        value=
+
+                                />
+                                <br/>
+                                <label for="make"><b>Vehicle Make</b></label>
+                                <div class="u-form-select-wrapper">
+                                    <select
+                                            id="make"
+                                            name="make"
+                                            class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                                            onchange="configurevehicle(this,document.getElementById('model'))"
+                                    >
+                                        <option value="" selected disabled>
+                                            Please select Vehicle Make
+                                        </option>
+                                        <option value="Ford">Ford</option>
+                                        <option value="Honda">Honda</option>
+                                        <option value="Nissan">Nissan</option>
+                                        <option value="Dodge">Dodge</option>
+                                    </select>
+                                </div>
+                                <br/>
+                                <label for="model"><b>Vehicle Model</b></label>
+                                <div class="u-form-select-wrapper">
+                                    <select
+                                            id="model"
+                                            name="model"
+                                            class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                                    >
+                                        <option value="" selected disabled>
+                                            Please select Vehicle Model
+                                        </option>
+                                        <option value="F150">F150</option>
+                                        <option value="Bronco">Bronco</option>
+                                        <option value="Focus">Focus</option>
+                                    </select>
+                                </div>
+                                <br/>
+                                <label for="autoYear"><b>Vehicle Year</b></label>
+                                <input type="int" name="autoYear" id="autoYear" required/>
+                                <br/>
+                                <label for="numberOfAccidents"
+                                ><b>Number of Accidents</b></label
+                                >
+                                <input
+                                        type="number"
+                                        name="numberOfAccidents"
+                                        id="numberOfAccidents"
+                                        required
+                                />
+                                <br/>
+                                <button type="submit" class="create-acc-button dashboard-button">
+                                    Add Vehicle
+                                </button>
+                            </div>
+                        </form>
+                        <form
+                                action="customers/homes"
+                                method="post"
+                                style="border: 2px solid black"
+                                class="add-home hide"
+                        >
+                            <div>
+                                <label for="customerId"></label>
+                                <input
+                                        hidden
+                                        type="int"
+                                        name="customerId"
+                                        id="customerHomeId"
+                                        value=
+
+                                />
+                                <br/>
+                                <label for="value"><b>Home Value</b></label>
+                                <input type="int" name="value" id="value" required/>
+                                <br/>
+                                <label for="heatingType"><b>Heat Type</b></label>
+                                <select id="heatingType" name="heatingType">
+                                    <option value="OIL_HEATING">Oil</option>
+                                    <option value="WOOD_HEATING">Wood</option>
+                                    <option value="OTHER_HEATING">Other</option>
+                                </select>
+                                <br/>
+                                <label for="location"><b>Home Area</b></label>
+                                <select id="location" name="location">
+                                    <option value="URBAN">Urban</option>
+                                    <option value="RURAL">Rural</option>
+                                </select>
+                                <br/>
+                                <label for="dateBuilt"><b>Date of Build</b></label>
+                                <input
+                                        type="date"
+                                        name="dateBuilt"
+                                        id="dateBuilt"
+
+                                />
+                                <br/>
+                                <button type="submit" class="create-home-button dashboard-button">
+                                    Add Home
+                                </button>
+                            </div>
+                        </form>
+                        <div class="dashboard-row">
+                            <div class="dashboard-col">
+                                <p style="margin-bottom: 0px">
+                                    <strong>Home Info:</strong>
+                                </p>
+                                <ul style="margin-top: 0px">
+                                    <li>Home Number:<span id="homeNumber"></span></li>
+                                    <li>Heat-Type:<span id="homeHeating"></span></li>
+                                    <li>Date Built:<span id="homeDateBuilt"></span></li>
+                                    <li>Value: $<span id="homeValue"></span></li>
+                                    <li>Location:<span id="homeLocation"></span></li>
+                                </ul>
+                            </div>
+                            <div class="dashboard-col">
+                                <p style="margin-bottom: 0px">
+                                    <strong>Auto Info:</strong>
+                                </p>
+                                <ul style="margin-top: 0px">
+                                    <li>Auto Number:<span id="autoNumber"></span></li>
+                                    <li>Num Of Accidents:<span id="numOfAccidents"></span></li>
+                                    <li>Make:<span id="carMake"></span></li>
+                                    <li>Model:<span id="carModel"></span></li>
+                                    <li>Year:<span id="carYear"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                        class="u-align-left u-container-style u-custom-color-2 u-custom-item u-list-item u-repeater-item u-list-item-2 dashboard-block"
+                >
+                    <div
+                            class="u-container-layout u-similar-container u-container-layout-2"
+                    >
 								<span class="u-file-icon u-icon u-icon-2"
-								><img src="assets/2311992.png" alt=""
-								/></span>
-						<h3 class="u-text u-text-default u-text-2">Policies</h3>
-						<p id="policy-number"><strong> Policy #:</strong> 12345</p>
-						<p id="policy-date"><strong> Policy Date:</strong> 03-04-2022</p>
-						<p id="premium"><strong>Premium:</strong> $3200/year $266.67/month</p>
-						<div class="dashboard-row">
-							<div class="dashboard-col">
-								<p style="margin-bottom: 0px;"><strong>Home Info:</strong></p>
-								<ul style="margin-top: 0px;">
-									<li id="heat-type">Oil</li>
-									<li id="home-year">1999</li>
-									<li id="home-value">$275,000</li>
-									<li id="home-area">Urban</li>
-								</ul>
-							</div>
-							<div class="dashboard-col">
-								<p style="margin-bottom: 0px;"><strong>Auto Info:</strong></p>
-								<ul style="margin-top: 0px;">
-									<li id="driver-dob">Driver DOB: 16-07-1997</li>
-									<li id="number-accidents"># of Accidents: 2</li>
-									<li id="vehicle-make">Honda</li>
-									<li id="vehicle-model">Civic</li>
-									<li id="vehicle-year">2012</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div
-						class="u-align-left u-container-style u-custom-color-2 u-custom-item u-list-item u-repeater-item u-list-item-3 dashboard-block"
-				>
-					<div
-							class="u-container-layout u-similar-container u-container-layout-3"
-					>
+                                ><img src="assets/2311992.png" alt=""
+                                /></span>
+                        <h3 class="u-text u-text-default u-text-2">Policies</h3>
+                        <button onclick="toggleAdd(this)" class="create-policy-button dashboard-button">
+                            Create Policy
+                        </button>
+                        <div class="policy-form">
+                            <form
+                                    action="/customers/homepolicy/autopolicy"
+                                    method="post"
+                                    style="border: 2px solid black"
+                                    class="create-policy hide"
+                                    onsubmit="returnToDashboard()"
+                            >
+                                <div>
+                                    <label for="customerId"
+                                    ></label
+                                    >
+                                    <input type="int" name="customerId" id="customerHomeAutoPId" hidden value=/>
+                                    <br/>
+                                    <label for="quoteId"><b>Quote Number</b></label>
+                                    <input type="int" name="quoteId" id="quoteId"/>
+                                    <br/>
+                                    <label for="policyType"><b>What policy do you want?</b></label>
+                                    <select
+                                            name="policyType">
+                                        <option value=2>Home Policy</option>
+                                        <option value=3>Auto Policy</option>
+                                    </select>
+                                    <br/>
+                                    <button type="submit" class="create-policy-button dashboard-button">
+                                        Create Policy
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="dashboard-row">
+                            <div class="dashboard-col">
+                                <p style="margin-bottom: 0px">
+                                    <strong>Auto Policy:</strong>
+                                </p>
+                                <ul style="margin-top: 0px">
+                                    <li>Auto Policy Number:<span id="autoPolicyNumber"></span></li>
+                                    <li>Policy Start Date:<span id="startOfAutoPolicy"></span></li>
+                                    <li>Policy Expire Date:<span id="endOfAutoPolicy"></span></li>
+                                    <li>Premium: $<span id="autoPremium"></span></li>
+                                </ul>
+                            </div>
+                            <div class="dashboard-col">
+                                <p style="margin-bottom: 0px">
+                                    <strong>Home Policy:</strong>
+                                </p>
+                                <ul style="margin-top: 0px">
+                                    <li>Home Policy Number:<span id="homePolicyNumber"></span></li>
+                                    <li>Policy Start Date:<span id="startOfHomePolicy"></span></li>
+                                    <li>Policy Expire Date:<span id="endOfHomePolicy"></span></li>
+                                    <li>Premium: $<span id="homePremium"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p> Your yearly premium: $ <span id="totalPremium"></span></p>
+                        <p> Monthly = $<span id="monthlyPremium"></span><br/>
+                            Bi-Weekly = $<span id="biweeklyPremium"></span>
+                        </p>
+                    </div>
+                </div>
+                <div
+                        class="u-align-left u-container-style u-custom-color-2 u-custom-item u-list-item u-repeater-item u-list-item-3 dashboard-block"
+                >
+                    <div
+                            class="u-container-layout u-similar-container u-container-layout-3"
+                    >
 								<span class="u-file-icon u-icon u-icon-3"
-								><img src="assets/71649222.png" alt=""
-								/></span>
-						<h3 class="u-text u-text-default u-text-3">Quotes</h3>
-						<p onclick="toggleQuote()" class="clickP">Saved Quote</p>
-						<div class="hide" id="quote">
-							<p id="quote-number">Quote Number:</p>
-							<p id="quote-date">Quote Date:</p>
-							<p id="premimum-quote">Premium Quote:</p>
-							<input type="button" id="cancel_button" value="X" />
-						</div>
-						<!--<p id="quote-number">Quote Number:</p>
-                        <p id="quote-date">Quote Date:</p>-->
-						<!--								<p id="premimum-quote">Premium Quote:</p>
-                                                        <p th:text="'Heating Type: ' + ${quoteManager.heatType}" />-->
-						<!--								<p th:text="'Year: ' + ${quoteManager.year}" />-->
-						<!--								<p th:text="'Value: ' + ${quoteManager.value}" />-->
-						<!--								<p th:text="'Area Type: ' + ${quoteManager.areaType}" />-->
-						<!--								<p th:text="'Driver DOB: ' + ${quoteManager.dob}" />-->
-						<!--								<p th:text="'Number of Accidents: ' + ${quoteManager.numAccidents}" />-->
-						<!--								<p th:text="'Make: ' + ${quoteManager.make}" />-->
-						<!--								<p th:text="'Model: ' + ${quoteManager.model}" />-->
-						<!--								<p th:text="'Vehicle Year: ' + ${quoteManager.vehicleYear}" />-->
-					</div>
-				</div>
-				<div
-						class="u-align-left u-container-style u-custom-color-2 u-custom-item u-list-item u-repeater-item u-list-item-4 dashboard-block"
-				>
-					<div
-							class="u-container-layout u-similar-container u-container-layout-4"
-					>
-								<span class="u-file-icon u-icon u-icon-4"
-								><img src="assets/37295621.png" alt=""
-								/></span>
-						<h3 class="u-text u-text-default u-text-4">Renew/Cancel</h3>
-						<div class="u-align-center u-form-group u-form-submit u-label-top">
-							<input
-									type="submit"
-									value="submit"
-									class="u-form-control-hidden"
-							/>
-							<a href="#" class="u-btn u-btn-submit u-button-style">Renew</a>
-						</div>
-						<div class="u-align-center u-form-group u-form-submit u-label-top">
-							<input
-									type="submit"
-									value="submit"
-									class="u-form-control-hidden"
-							/>
-							<a href="#" class="u-btn u-btn-submit u-button-style">Cancel</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                                ><img src="assets/71649222.png" alt=""
+                                /></span>
+                        <h3 class="u-text u-text-default u-text-3">Quotes</h3>
+                        <button onclick="toggleAdd(this)" class="create-quote-button dashboard-button">
+                            Create Home + Auto Quote
+                        </button>
+                        <button onclick="toggleAdd(this)" class="create-home-quote-button dashboard-button">
+                            Create Home Quote
+                        </button>
+                        <button onclick="toggleAdd(this)" class="create-auto-quote-button dashboard-button">
+                            Create Auto Quote
+                        </button>
+                        <div class="quote-form">
+                            <form
+                                    action="/customers/homequotes/autoquotes"
+                                    method="post"
+                                    style="border: 2px solid black"
+                                    class="create-quote hide"
+                            >
+                                <div>
+                                    <label for="customerHomeAutoPId"
+                                    ></label
+                                    >
+                                    <input type="int" name="customerId" id="customerHomeAutoQId" hidden value=/>
+                                    <br/>
+                                    <label for="autoHomeQId">This quote is for Home and Auto</label>
+                                    <input type="int" name="autoId" id="autoHomeQId" hidden value=/>
+                                    <br/>
+                                    <label for="homeAutoQId"></label>
+                                    <input hidden type="int" name="homeId" id="homeAutoQId" value=/>
+                                    <br/>
+                                    <button type="submit" class="create-quote-button dashboard-button">
+                                        Get Quote!
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="auto-quote-form">
+                            <form
+                                    action="/customers/autoquotes"
+                                    method="post"
+                                    style="border: 2px solid black"
+                                    class="create-auto-quote hide"
+                            >
+                                <div>
+                                    <label for="customerAutoQId"
+                                    ></label
+                                    >
+                                    <input type="int" name="customerId" id="customerAutoQId" hidden value=/>
+                                    <label for="autoQId"><b>This is a quote for Auto Only</b></label>
+                                    <input hidden type="int" name="autoId" id="autoQId" value=/>
+                                    <br/>
+                                    <button type="submit" class="create-auto-quote-button dashboard-button">
+                                        Get Auto Quote!
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="home-quote-form">
+                            <form
+                                    action="/customers/homequotes"
+                                    method="post"
+                                    style="border: 2px solid black"
+                                    class="create-home-quote hide"
+                            >
+                                <div>
+                                    <label for="customerHomeQId"
+                                    ></label
+                                    >
+                                    <input type="int" name="customerId" id="customerHomeQId" hidden value=/>
+                                    <br/>
+                                    <label for="homeQId">This is a quote for Home Only</label>
+                                    <input hidden type="int" name="homeId" id="homeQId" value=/>
+                                    <br/>
+                                    <button type="submit" class="create-home-quote-button dashboard-button">
+                                        Get Home Quote!
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="dashboard-row">
+                            <div class="dashboard-col">
+                                <p style="margin-bottom: 0px">
+                                    <strong>Auto Quote:</strong>
+                                </p>
+                                <ul style="margin-top: 0px">
+                                    <li>Auto Quote Number:<span id="autoQuoteNumber"></span></li>
+                                    <li>End Date:<span id="endOfAutoQuote"></span></li>
+                                    <li>Premium: $<span id="autoQuotePremium"></span></li>
+                                </ul>
+                            </div>
+                            <div class="dashboard-col">
+                                <p style="margin-bottom: 0px">
+                                    <strong>Home Quote:</strong>
+                                </p>
+                                <ul style="margin-top: 0px">
+                                    <li>Home Quote Number:<span id="homeQuoteNumber"></span></li>
+                                    <li>End Date:<span id="endOfHomeQuote"></span></li>
+                                    <li>Premium: $<span id="homeQuotePremium"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="u-align-left u-container-style u-custom-color-2 u-custom-item u-list-item u-repeater-item u-list-item-4 dashboard-block">
+                    <div class="u-container-layout u-similar-container u-container-layout-4">
+                        <span class="u-file-icon u-icon u-icon-4"><img src="assets/37295621.png" alt=""/></span>
+                        <h3 class="u-text u-text-default u-text-4">Renew/Cancel</h3>
+                        <button style="margin-top: 20px" onclick="toggleAdd(this)"
+                                class="renew-policy-button dashboard-button">Renew Policy
+                        </button>
+                        <button style="margin-top: 20px;" onclick="toggleAdd(this)"
+                                class="cancel-policy-button dashboard-button">Cancel Policy
+                        </button>
+                        <div class="cancel-form">
+                            <form
+                                    action="/customers/homepolicy/autopolicy/delete"
+                                    method="post"
+                                    style="border: 2px solid black"
+                                    class="cancel-policy hide"
+                            >
+                                <div>
+                                    <label for="customerDeleteId"></label>
+                                    <input type="int" name="customerId" id="customerDeleteId" hidden value= />
+                                    <label for="policyId"><b>Policy Number</b></label>
+                                    <input type="int" name="policyId" id="policyId"/>
+                                    <label for="autoPolicy">Auto</label>
+                                    <input type="radio" id="autoPolicy" name="cancelPolicy" value=1 />
+                                    <label for="homePolicy">Home</label>
+                                    <input type="radio" id="homePolicy" name="cancelPolicy" value=2 />
+                                    <br/>
+                                    <button type="submit" class="cancel-policy-button dashboard-button">Cancel Policy
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="renew-form">
+                            <form
+                                    action="/customers/homepolicy/autopolicy/renew"
+                                    method="post"
+                                    style="border: 2px solid black"
+                                    class="renew-policy hide"
+                            >
+                                <div>
+                                    <label for="customerRenewId"></label>
+                                    <input type="int" name="customerId" id="customerRenewId" hidden value=/>
+                                    <label for="policyId"><b>Policy Number</b></label>
+                                    <input type="int" name="policyId" id="policyId"/>
+                                    <label for="autoPolicy">Auto</label>
+                                    <input type="radio" id="autoPolicy" name="renewPolicy" value=1/>
+                                    <label for="homePolicy">Home</label>
+                                    <input type="radio" id="homePolicy" name="renewPolicy" value=2/>
+                                    <br/>
+                                    <button type="submit" class="renew-policy-button dashboard-button">Renew Policy
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <footer class="u-clearfix u-footer u-grey-80" id="sec-ca85">
-	<div class="u-clearfix u-sheet u-sheet-1">
-		<a
-				href="https://nicepage.com"
-				class="u-image u-logo u-image-1"
-				data-image-width="308"
-				data-image-height="149"
-		>
-			<img src="assets/logo-2.png" class="u-logo-image u-logo-image-1" />
-		</a>
-	</div>
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <a
+                href="https://nicepage.com"
+                class="u-image u-logo u-image-1"
+                data-image-width="308"
+                data-image-height="149"
+        >
+            <img src="assets/logo-2.png" class="u-logo-image u-logo-image-1"/>
+        </a>
+    </div>
 </footer>
 </body>
 <script class="u-script" type="text/javascript" src="js/Dashboard.js" defer=""></script>
 <script src="js/changeURL.js"></script>
 <script>
-	function toggleQuote() {
-		let quote = document.getElementById("quote")
-		quote.classList.toggle("hide");
-	}
-	// $(document).ready(function () {
-	// 	$("#display_quote").click(function () {
-	// 		showquote();
-	// 	});
-	// 	$("#close_button").click(function () {
-	// 		hidequote();
-	// 	});
-	// });
-	//
-	// function showquote() {
-	// 	$("#quote").fadeToggle();
-	// 	$("#quote").css({ visibility: "visible", display: "block" });
-	// }
-	//
-	// function hidequote() {
-	// 	$("#quote").fadeToggle();
-	// 	$("#quote").css({ visibility: "hidden", display: "none" });
-	// }
+    function toggleQuote() {
+        let quote = document.getElementById("quote");
+        quote.classList.toggle("hide");
+    }
+
+    function toggleAdd(elem) {
+        if (elem.classList.contains("cover")) {
+            if (!document.querySelector(".add-auto").classList.contains("hide")) {
+                document.querySelector(".add-auto").classList.add("hide");
+            }
+            if (!document.querySelector(".add-home").classList.contains("hide")) {
+                document.querySelector(".add-home").classList.add("hide");
+            }
+            if (!document.querySelector(".create-quote").classList.contains("hide")) {
+                document.querySelector(".create-quote").classList.add("hide");
+            }
+            if (!document.querySelector(".create-policy").classList.contains("hide")) {
+                document.querySelector(".create-policy").classList.add("hide");
+            }
+            if (!document.querySelector(".create-auto-quote").classList.contains("hide")) {
+                document.querySelector(".create-auto-quote").classList.add("hide");
+            }
+            if (!document.querySelector(".create-home-quote").classList.contains("hide")) {
+                document.querySelector(".create-home-quote").classList.add("hide");
+            }
+            if (!document.querySelector(".cancel-policy").classList.contains("hide")) {
+                document.querySelector(".cancel-policy").classList.add("hide");
+            }
+            if (!document.querySelector(".renew-policy").classList.contains("hide")) {
+                document.querySelector(".renew-policy").classList.add("hide");
+            }
+            elem.classList.add("hide");
+        } else if (elem.classList.contains("add-auto-button")) {
+            document.querySelector(".add-auto").classList.remove("hide");
+            document.querySelector(".cover").classList.remove("hide");
+        } else if (elem.classList.contains("add-home-button")) {
+            document.querySelector(".add-home").classList.remove("hide");
+            document.querySelector(".cover").classList.remove("hide");
+        } else if (elem.classList.contains("create-quote-button")) {
+            document.querySelector(".create-quote").classList.remove("hide");
+            document.querySelector(".cover").classList.remove("hide");
+        } else if (elem.classList.contains("create-policy-button")) {
+            document.querySelector(".create-policy").classList.remove("hide");
+            document.querySelector(".cover").classList.remove("hide");
+        } else if (elem.classList.contains("create-auto-quote-button")) {
+            document.querySelector(".create-auto-quote").classList.remove("hide");
+            document.querySelector(".cover").classList.remove("hide");
+        } else if (elem.classList.contains("create-home-quote-button")) {
+            document.querySelector(".create-home-quote").classList.remove("hide");
+            document.querySelector(".cover").classList.remove("hide");
+        } else if (elem.classList.contains("cancel-policy-button")) {
+            document.querySelector(".cancel-policy").classList.remove("hide");
+            document.querySelector(".cover").classList.remove("hide");
+        } else if (elem.classList.contains("renew-policy-button")) {
+            document.querySelector(".renew-policy").classList.remove("hide");
+            document.querySelector(".cover").classList.remove("hide");
+        }
+    }
+
+    // $(document).ready(function () {
+    // 	$("#display_quote").click(function () {
+    // 		showquote();
+    // 	});
+    // 	$("#close_button").click(function () {
+    // 		hidequote();
+    // 	});
+    // });
+    //
+    // function showquote() {
+    // 	$("#quote").fadeToggle();
+    // 	$("#quote").css({ visibility: "visible", display: "block" });
+    // }
+    //
+    // function hidequote() {
+    // 	$("#quote").fadeToggle();
+    // 	$("#quote").css({ visibility: "hidden", display: "none" });
+    // }
+    fetch('http://localhost:8080/customers/' + sessionStorage.getItem('id')).then((data) => {
+        return data.json();
+        // console.log(data)
+    }).then((completedata) => {
+        console.log(completedata)
+        document.getElementById('accountNum').innerHTML = completedata.id;
+        document.getElementById('firstName').innerHTML = completedata.firstName;
+        document.getElementById('lastName').innerHTML = completedata.lastName;
+        document.getElementById('email').innerHTML = completedata.email;
+        document.getElementById('dob').innerHTML = completedata.dateOfBirth;
+
+        //Sets customer id for all forms
+        document.getElementById("customerAutoId").defaultValue = document.getElementById('customerAutoId').innerText = completedata.id;
+        document.getElementById("customerHomeId").defaultValue = document.getElementById('customerHomeId').innerText = completedata.id;
+        document.getElementById("customerHomeAutoPId").defaultValue = document.getElementById('customerHomeAutoPId').innerText = completedata.id;
+        document.getElementById("customerHomeAutoQId").defaultValue = document.getElementById('customerHomeAutoQId').innerText = completedata.id;
+        document.getElementById("customerHomeQId").defaultValue = document.getElementById('customerHomeQId').innerText = completedata.id;
+        document.getElementById("customerAutoQId").defaultValue = document.getElementById('customerAutoQId').innerText = completedata.id;
+        document.getElementById("customerDeleteId").defaultValue = document.getElementById('customerDeleteId').innerText = completedata.id;
+        document.getElementById("customerRenewId").defaultValue = document.getElementById('customerRenewId').innerText = completedata.id;
+
+        if (completedata.autos[0] != null) {
+            document.getElementById('autoNumber').innerHTML = completedata.autos[0].autoId;
+            document.getElementById('numOfAccidents').innerHTML = completedata.autos[0].numberOfAccidents;
+            document.getElementById('carMake').innerHTML = completedata.autos[0].make;
+            document.getElementById('carModel').innerHTML = completedata.autos[0].model;
+            document.getElementById('carYear').innerHTML = completedata.autos[0].autoYear;
+            document.getElementById("autoHomeQId").defaultValue = document.getElementById('autoHomeQId').innerText = completedata.autos[0].autoId;
+            document.getElementById("autoQId").defaultValue = document.getElementById('autoQId').innerText = completedata.autos[0].autoId;
+        }
+        if (completedata.homes[0] != null) {
+            document.getElementById('homeNumber').innerHTML = completedata.homes[0].homeId;
+            document.getElementById('homeHeating').innerHTML = completedata.homes[0].heatingType;
+            document.getElementById('homeDateBuilt').innerHTML = completedata.homes[0].dateBuilt;
+            document.getElementById('homeValue').innerHTML = completedata.homes[0].value;
+            document.getElementById('homeLocation').innerHTML = completedata.homes[0].location;
+            document.getElementById("homeAutoQId").defaultValue = document.getElementById('homeAutoQId').innerText = completedata.homes[0].homeId;
+            document.getElementById("homeQId").defaultValue = document.getElementById('homeQId').innerText = completedata.homes[0].homeId;
+
+        }
+        if (completedata.autoQuotes[0] != null) {
+            document.getElementById('autoQuoteNumber').innerHTML = completedata.autoQuotes[0].autoQuoteId;
+            document.getElementById('endOfAutoQuote').innerHTML = completedata.autoQuotes[0].endDate;
+            document.getElementById('autoQuotePremium').innerHTML = completedata.autoQuotes[0].premium;
+
+
+        }
+        if (completedata.homeQuotes[0] != null) {
+            document.getElementById('homeQuoteNumber').innerHTML = completedata.homeQuotes[0].homeQuoteId;
+            document.getElementById('endOfHomeQuote').innerHTML = completedata.homeQuotes[0].endDate;
+            document.getElementById('homeQuotePremium').innerHTML = completedata.homeQuotes[0].premium;
+
+        }
+        if (completedata.autoPolicies[0] != null) {
+            document.getElementById('autoPolicyNumber').innerHTML = completedata.autoPolicies[0].autoPolicyId;
+            document.getElementById('startOfAutoPolicy').innerHTML = completedata.autoPolicies[0].startDate;
+            document.getElementById('endOfAutoPolicy').innerHTML = completedata.autoPolicies[0].endDate;
+            document.getElementById('autoPremium').innerHTML = completedata.autoPolicies[0].premium;
+
+        }
+        if (completedata.homePolicies[0] != null) {
+            document.getElementById('homePolicyNumber').innerHTML = completedata.homePolicies[0].homePolicyId;
+            document.getElementById('startOfHomePolicy').innerHTML = completedata.homePolicies[0].startDate;
+            document.getElementById('endOfHomePolicy').innerHTML = completedata.homePolicies[0].endDate;
+            document.getElementById('homePremium').innerHTML = completedata.homePolicies[0].premium;
+
+        }
+
+        var premiumAuto = completedata.autoPolicies[0];
+        var premiumHome = completedata.homePolicies[0];
+
+
+        if (premiumAuto != null && premiumHome != null) {
+            let total = (premiumAuto.premium - (premiumAuto.premium * 0.10)) + (premiumHome.premium - (premiumHome.premium * 0.10));
+            let roundTotal = Math.round(total * 100)/100;
+            let biWeek = Math.round((roundTotal/26)* 100)/100;
+            let monthly = Math.round((roundTotal/12)*100)/100;
+            document.getElementById('totalPremium').innerHTML = roundTotal;
+            document.getElementById('biweeklyPremium').innerHTML = biWeek;
+            document.getElementById('monthlyPremium').innerHTML = monthly;
+        }
+        else if(premiumAuto == null && premiumHome != null){
+            let total = premiumHome.premium;
+            let roundTotal = Math.round(total * 100)/100;
+            let biWeek = Math.round((roundTotal/26)* 100)/100;
+            let monthly = Math.round((roundTotal/12)*100)/100;
+            document.getElementById('totalPremium').innerHTML = roundTotal;
+            document.getElementById('biweeklyPremium').innerHTML = biWeek;
+            document.getElementById('monthlyPremium').innerHTML = monthly;
+
+        } else if (premiumAuto != null && premiumHome == null){
+            let total = premiumAuto.premium;
+            let roundTotal = Math.round(total * 100)/100;
+            let biWeek = Math.round((roundTotal/26)* 100)/100;
+            let monthly = Math.round((roundTotal/12)*100)/100;
+            document.getElementById('totalPremium').innerHTML = roundTotal;
+            document.getElementById('biweeklyPremium').innerHTML = biWeek;
+            document.getElementById('monthlyPremium').innerHTML = monthly;
+        }
+
+    })
+
+    function returnToDashboard(){
+        window.location.href = "http://localhost:8080/Dashboard/"
+    }
+
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "befadf4f-9dfb-4d3d-aa73-08275320509f";
+    (function () {
+        d = document;
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+    })();
 </script>
 </html>

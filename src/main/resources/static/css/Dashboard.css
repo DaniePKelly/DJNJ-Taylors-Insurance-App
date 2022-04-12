@@ -94,13 +94,13 @@ ul > li {
   margin-left: 20px;
 }
 
-.dashboard-row{
+.dashboard-row {
   display: flex;
   width: 100%;
   margin-right: -30px;
 }
 
-.dashboard-col{
+.dashboard-col {
   display: flex;
   flex-direction: column;
   margin-right: 30px;
@@ -110,7 +110,7 @@ ul > li {
   width: 550px !important;
   height: 550px !important;
   border-radius: 20px;
-  box-shadow: 10px 10px #0D4E85;
+  box-shadow: 10px 10px #0d4e85;
 }
 
 /*#display_quote {*/
@@ -143,8 +143,74 @@ ul > li {
   cursor: pointer;
 }
 
+.dashboard-button {
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #0d4e85;
+  font-weight: 500;
+  width: 125px;
+  height: 60px;
+}
+
+input,
+select {
+  border-radius: 4px;
+}
+
+.add-auto,
+.add-home,
+.create-quote,
+.create-policy,
+.create-auto-quote,
+.create-home-quote,
+.cancel-policy, .renew-policy {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  top: calc(50% - 250px);
+  left: calc(50% - 250px);
+  border-radius: 10px;
+  background-color: #dae1f0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-auto > div,
+.add-home > div,
+.create-quote > div,
+.create-policy > div,
+.create-auto-quote > div,
+.create-home-quote > div,
+.cancel-policy > div, .renew-policy >div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-quote-button,
+.create-policy-button,
+.create-auto-quote-button,
+.create-home-quote-button, .renew-policy-button {
+  margin-top: 20px;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 5;
+}
+
 .hide {
-  display: none;
+  display: none !important;
 }
 
 @media (max-width: 1199px) {
@@ -186,6 +252,3 @@ ul > li {
     padding-right: 10px;
   }
 }
-
-
-
